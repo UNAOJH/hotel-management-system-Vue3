@@ -1,15 +1,14 @@
 import request from '@/utils/request'
+import { listType } from "@/api/type/type" // 假设已定义该接口
 
 // 获取房型列表
-export function listType(query) {
-  return request({
-    url: '/type/type/list',
-    method: 'get',
-    params: query
+function getRoomTypes() {
+  listType().then(response => {
+    roomTypeOptions.value = response.rows || []
   })
 }
-
-
+// 页面初始化时调用
+getRoomTypes()
 
 // 查询客房信息列表
 export function listInfo(query) {
