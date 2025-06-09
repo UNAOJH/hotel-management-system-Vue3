@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
+    <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="120px">
       <el-form-item label="公告标题" prop="title">
         <el-input
           v-model="queryParams.title"
@@ -25,21 +25,48 @@
           placeholder="请选择发布时间">
         </el-date-picker>
       </el-form-item>
-      <el-form-item label="状态，0未发布，1已发布" prop="status">
-        <el-select v-model="queryParams.status" placeholder="请选择状态，0未发布，1已发布" clearable>
+      <el-form-item label="状态" style="width: 300px;" prop="status">
+        <el-select v-model="queryParams.status" style="width: 300px" placeholder="请选择状态" clearable>
           <el-option
-            v-for="dict in notice_status"
-            :key="dict.value"
-            :label="dict.label"
-            :value="dict.value"
+              v-for="dict in notice_status"
+              :key="dict.value"
+              :label="dict.label"
+              :value="dict.value"
           />
         </el-select>
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" icon="Search" @click="handleQuery">搜索</el-button>
-        <el-button icon="Refresh" @click="resetQuery">重置</el-button>
-      </el-form-item>
+<!--      <el-form-item >-->
+<!--        <el-button type="primary" icon="Search" @click="handleQuery">搜索</el-button>-->
+<!--        <el-button icon="Refresh" @click="resetQuery">重置</el-button>-->
+<!--      </el-form-item>-->
+<!--      <el-row :gutter="10" justify="end">-->
+<!--        <el-col :span="24">-->
+<!--          <el-form-item style="margin-bottom: 0; text-align: right;">-->
+<!--            <el-button type="primary" icon="Search" @click="handleQuery">搜索</el-button>-->
+<!--            <el-button icon="Refresh" @click="resetQuery">重置</el-button>-->
+<!--          </el-form-item>-->
+<!--        </el-col>-->
+<!--      </el-row>-->
+      <el-row :gutter="10" justify="end" style="width: 100%;">
+        <el-col :span="24">
+          <el-form-item style="margin-bottom: 0; text-align: right;">
+            <el-button type="primary" icon="Search" @click="handleQuery">搜索</el-button>
+            <el-button icon="Refresh" @click="resetQuery">重置</el-button>
+          </el-form-item>
+        </el-col>
+      </el-row>
     </el-form>
+    <!-- 添加一个空行 -->
+    <el-row>
+      <el-col :span="24">
+        <div style="height: 20px;"></div>
+      </el-col>
+    </el-row>  <!-- 添加一个空行 -->
+    <el-row>
+      <el-col :span="24">
+        <div style="height: 20px;"></div>
+      </el-col>
+    </el-row>
 
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
@@ -131,8 +158,8 @@
             placeholder="请选择发布时间">
           </el-date-picker>
         </el-form-item>
-        <el-form-item label="状态，0未发布，1已发布" prop="status">
-          <el-select v-model="form.status" placeholder="请选择状态，0未发布，1已发布">
+        <el-form-item label="状态" prop="status">
+          <el-select v-model="form.status" placeholder="请选择状态">
             <el-option
               v-for="dict in notice_status"
               :key="dict.value"
