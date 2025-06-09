@@ -1,6 +1,94 @@
-<!--<template>-->
-<!--  <div class="app-container home">-->
-<!--    <el-row :gutter="20">-->
+<template>
+  <div class="app-container home">
+    <!-- 欢迎标题 -->
+    <el-card shadow="hover" style="text-align: center;">
+      <h2>🏨 欢迎使用「酒店综合管理系统」</h2>
+      <p>为中小型酒店提供集预订、入住、退房、房态、统计于一体的数字化解决方案</p>
+      <div style="text-align: center; margin-top: 10px;">
+        <el-tag type="info">公网部署</el-tag>
+        <el-link type="primary" href="http://hotel-system.unaojhfnos.top" target="_blank" style="margin-left: 5px;">
+          http://hotel-system.unaojhfnos.top
+        </el-link>
+      </div>
+    </el-card>
+
+
+
+    <!-- 系统功能模块 -->
+    <el-row :gutter="20" style="margin-top: 20px;">
+      <el-col :span="6">
+        <el-card>
+          <h3>📅 预订管理</h3>
+          <p>支持客户自主预订、取消与预定历史追踪。</p>
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card>
+          <h3>🛏️ 入住安排</h3>
+          <p>登记入住信息，自动分配房间，支持客户类型区分。</p>
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card>
+          <h3>🧹 房态维护</h3>
+          <p>实时查看房间状态，支持清扫、维修、暂停使用等。</p>
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card>
+          <h3>📊 运营报表</h3>
+          <p>提供入住率、收益、客户来源等多维度统计。</p>
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <!-- 开发背景与目的 -->
+    <el-card style="margin-top: 20px;">
+      <h3>🔍 开发背景</h3>
+      <p>
+        当前中小型酒店普遍存在管理效率低、手工记录繁杂、房态更新滞后等问题，
+        本系统旨在通过信息化手段，简化管理流程，提升服务质量，实现运营数据可视化，增强管理者对酒店运营的掌控力。
+      </p>
+    </el-card>
+
+<!--    &lt;!&ndash; 技术架构介绍 &ndash;&gt;-->
+<!--    <el-card style="margin-top: 20px;">-->
+<!--      <h3>🧱 技术架构</h3>-->
+<!--      <ul>-->
+<!--        <li>前端：Vue2 + Element UI + Axios</li>-->
+<!--        <li>后端：Spring Boot + MyBatis-Plus + Redis</li>-->
+<!--        <li>数据库：MySQL</li>-->
+<!--        <li>开发框架：基于若依 RuoYi-Vue 改造</li>-->
+<!--        <li>代码生成：使用若依代码生成器扩展支持主子表、联动字典等</li>-->
+<!--      </ul>-->
+<!--    </el-card>-->
+
+<!--    &lt;!&ndash; 系统部署说明（可选） &ndash;&gt;-->
+<!--    <el-card style="margin-top: 20px;">-->
+<!--      <h3>🚀 系统部署说明</h3>-->
+<!--      <ul>-->
+<!--        <li>支持本地开发环境部署（IDEA + Vue CLI）</li>-->
+<!--        <li>支持 Docker 一键部署（包含前后端、MySQL、Redis）</li>-->
+<!--        <li>已适配 Nginx 正式环境运行，支持 HTTPS</li>-->
+<!--      </ul>-->
+<!--    </el-card>-->
+
+    <!-- 系统作者与致谢 -->
+    <el-card style="margin-top: 20px; background-color: #f5f7fa;">
+      <h3>🧑‍💻 系统开发者</h3>
+      <p>
+        本系统由 <strong>张俊豪（学号23190202）欧阳志云（学号23190215）</strong> 独立设计与开发完成，基于若依快速开发平台改造。<br/>
+        如果你觉得本项目对你有帮助，欢迎
+        <a href="https://github.com/UNAOJH/hotel-management-system" target="_blank" style="color: #409EFF; text-decoration: none;">访问我们的 GitHub 项目 🌟</a>、
+        Star 🌟 / Fork 🔧 / 交流 💬。
+      </p>
+      <p style="color: #999; margin-top: 10px;">
+        版权所有 © 2025 张俊豪 & 欧阳志云（23190202 / 23190215） · 本系统仅用于学习和教学目的
+      </p>
+    </el-card>
+
+
+    <!--    <el-row :gutter="20">-->
 <!--      <el-col :sm="24" :lg="12" style="padding-left: 20px">-->
 <!--        <h2>若依后台管理框架</h2>-->
 <!--        <p>-->
@@ -1054,8 +1142,8 @@
 <!--        </el-card>-->
 <!--      </el-col>-->
 <!--    </el-row>-->
-<!--  </div>-->
-<!--</template>-->
+  </div>
+</template>
 
 <script setup name="Index">
 const version = ref('3.9.0')
@@ -1126,6 +1214,14 @@ function goTarget(url) {
       padding-inline-start: 40px;
     }
   }
+}
+
+h2, h3 {
+  margin-bottom: 10px;
+}
+p, li {
+  font-size: 14px;
+  line-height: 1.6;
 }
 </style>
 

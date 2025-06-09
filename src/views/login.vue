@@ -59,7 +59,13 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2018-2025 ruoyi.vip All Rights Reserved.</span>
+  <span>
+    本系统由 <strong>张俊豪</strong>（学号23190202）<strong>欧阳志云</strong>（学号23190215） 独立设计与开发完成
+    &nbsp;|&nbsp;
+    <a href="https://github.com/UNAOJH/hotel-management-system" target="_blank" style="color: #fff; text-decoration: underline;">
+      GitHub 地址
+    </a>
+  </span>
     </div>
   </div>
 </template>
@@ -210,17 +216,34 @@ getCookie()
     vertical-align: middle;
   }
 }
+//.el-login-footer {
+//  height: 40px;
+//  line-height: 40px;
+//  position: fixed;
+//  bottom: 0;
+//  width: 100%;
+//  text-align: center;
+//  color: #fff;
+//  font-family: Arial;
+//  font-size: 12px;
+//  letter-spacing: 1px;
+//}
 .el-login-footer {
-  height: 40px;
-  line-height: 40px;
   position: fixed;
-  bottom: 0;
+  bottom: 20px; // 原来是 0，现在往上移 20px
   width: 100%;
   text-align: center;
   color: #fff;
   font-family: Arial;
   font-size: 12px;
   letter-spacing: 1px;
+  z-index: 9999;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 5px;
+  }
 }
 .login-code-img {
   height: 40px;
