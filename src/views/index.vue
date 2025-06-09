@@ -6,13 +6,11 @@
       <p>为中小型酒店提供集预订、入住、退房、房态、统计于一体的数字化解决方案</p>
       <div style="text-align: center; margin-top: 10px;">
         <el-tag type="info">公网部署</el-tag>
-        <el-link type="primary" href="http://hotel-system.unaojhfnos.top" target="_blank" style="margin-left: 5px;">
-          http://hotel-system.unaojhfnos.top
+        <el-link type="primary" href="http://hotel.unaojhfnos.top" target="_blank" style="margin-left: 5px;">
+          https://hotel.unaojhfnos.top
         </el-link>
       </div>
     </el-card>
-
-
 
     <!-- 系统功能模块 -->
     <el-row :gutter="20" style="margin-top: 20px;">
@@ -40,7 +38,34 @@
           <p>提供入住率、收益、客户来源等多维度统计。</p>
         </el-card>
       </el-col>
+
+      <el-col :span="6">
+        <el-card>
+          <h3>🌐 公网部署</h3>
+          <p>支持通过 Cloudflare 隧道实现安全稳定的公网访问。</p>
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card>
+          <h3>🔒 权限管理</h3>
+          <p>基于角色的细粒度权限控制，保证系统安全。</p>
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card>
+          <h3>⚙️ 易扩展</h3>
+          <p>模块化设计，方便未来功能快速迭代和扩展。</p>
+        </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card>
+          <h3>💾 数据备份</h3>
+          <p>支持定期自动备份，确保数据安全无忧。</p>
+        </el-card>
+      </el-col>
     </el-row>
+
+
 
     <!-- 开发背景与目的 -->
     <el-card style="margin-top: 20px;">
@@ -1222,6 +1247,25 @@ h2, h3 {
 p, li {
   font-size: 14px;
   line-height: 1.6;
+}
+
+.features {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+}
+.features h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+.features li {
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 </style>
 

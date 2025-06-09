@@ -45,6 +45,12 @@ export default defineConfig(({ mode, command }) => {
       port: 80,
       host: true,
       open: true,
+      allowedHosts: [
+        'finances-girl-miniature-copying.trycloudflare.com',
+        'hotel.unaojhfnos.top'
+        // 如果想允许所有host，改成 'all'
+        // 'all',
+      ],
       proxy: {
         // https://cn.vitejs.dev/config/#server-proxy
         '/dev-api': {
