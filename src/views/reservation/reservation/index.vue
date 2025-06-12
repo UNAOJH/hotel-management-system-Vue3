@@ -101,7 +101,7 @@
 
     <el-table v-loading="loading" :data="reservationList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="主键" align="center" prop="id" />
+<!--      <el-table-column label="主键" align="center" prop="id" />-->
       <el-table-column label="房间ID" align="center" prop="roomId" />
       <el-table-column label="预订日期" align="center" prop="reserveDate" width="180">
         <template #default="scope">
