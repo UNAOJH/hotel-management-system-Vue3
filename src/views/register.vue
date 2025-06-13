@@ -1,11 +1,11 @@
 <template>
   <div class="register">
-    <el-fornpmm ref="registerRef" :model="registerForm" :rules="registerRules" class="register-form">
+    <el-form ref="registerRef" :model="registerForm" :rules="registerRules" class="register-form">
       <h3 class="title">{{ title }}</h3>
       <el-form-item prop="username">
         <el-input
             v-model="registerForm.username"
-            type="text"p
+            type="text"
             size="large"
             auto-complete="off"
             placeholder="账号"
@@ -75,7 +75,7 @@
           <router-link class="link-type" :to="'/login'">使用已有账户登录</router-link>
         </div>
       </el-form-item>
-    </el-fornpmm>
+    </el-form>
     <!--  底部  -->
     <div class="el-register-footer">
 
