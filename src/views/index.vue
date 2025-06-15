@@ -15,14 +15,13 @@
     <!-- 系统功能模块 -->
     <el-row :gutter="20" style="margin-top: 20px;">
       <el-col v-for="(item, index) in cards" :key="item.title" :span="6" class="col-item fade-item"
-        :style="{ animationDelay: (index * 0.1) + 's' }" :class="{ 'fade-in': show }">
+              :style="{ animationDelay: (index * 0.1) + 's' }" :class="{ 'fade-in': show }">
         <el-card shadow="hover">
           <h3>{{ item.icon }} {{ item.title }}</h3>
           <p>{{ item.desc }}</p>
         </el-card>
       </el-col>
     </el-row>
-
 
 
     <!-- 开发背景与目的 -->
@@ -35,13 +34,14 @@
     </el-card>
 
     <!-- 系统作者与致谢 -->
-    <el-card class="fade-item" shadow="hover" :class="{ 'fade-in': show }" style="margin-top: 20px; background-color: #f5f7fa;">
+    <el-card class="fade-item" shadow="hover" :class="{ 'fade-in': show }"
+             style="margin-top: 20px; background-color: #f5f7fa;">
       <h3>🧑‍💻 系统开发者</h3>
       <p>
-        本系统由 <strong>张俊豪（学号23190202）欧阳志云（学号23190215）</strong> 独立设计与开发完成，基于若依快速开发平台改造。<br />
+        本系统由 <strong>张俊豪（学号23190202）欧阳志云（学号23190215）</strong> 独立设计与开发完成，基于若依快速开发平台改造。<br/>
         如果你觉得本项目对你有帮助，欢迎
         <a href="https://github.com/UNAOJH/hotel-management-system" target="_blank"
-          style="color: #409EFF; text-decoration: none;">访问我们的 GitHub 项目 🌟</a>、
+           style="color: #409EFF; text-decoration: none;">访问我们的 GitHub 项目 🌟</a>、
         Star 🌟 / Fork 🔧 / 交流 💬。
       </p>
       <p style="color: #999; margin-top: 10px;">
@@ -53,19 +53,29 @@
 </template>
 
 <script setup name="Index">
-import { ref, onMounted } from 'vue'
+import {ref, onMounted} from 'vue'
+
 const version = ref('3.9.0')
 
 
 const cards = ref([
-  { title: '预订管理', icon: '📅', desc: '支持客户自主预订、取消与预定历史追踪。' },
-  { title: '入住安排', icon: '🛏️', desc: '登记入住信息，自动分配房间，支持客户类型区分。' },
-  { title: '房态维护', icon: '🧹', desc: '实时查看房间状态，支持清扫、维修、暂停使用等。' },
-  { title: '运营报表', icon: '📊', desc: '提供入住率、收益、客户来源等多维度统计。' },
-  { title: '公网部署', icon: '🌐', desc: '支持通过 Cloudflare 隧道实现安全稳定的公网访问。' },
-  { title: '权限管理', icon: '🔒', desc: '基于角色的细粒度权限控制，保证系统安全。' },
-  { title: '易扩展', icon: '⚙️', desc: '模块化设计，方便未来功能快速迭代和扩展。' },
-  { title: '数据备份', icon: '💾', desc: '支持定期自动备份，确保数据安全无忧。' },
+  {title: '智能预订', icon: '📅', desc: '客户自主在线预订与取消，完整预订历史记录与状态追踪'},
+  {title: '智能入住', icon: '🛏️', desc: '自动化房间分配，支持散客和团队的差异化登记流程'},
+  {title: '实时房态', icon: '🔄', desc: '可视化房间状态（清洁/维修/停用），支持扫码报修功能'},
+
+  {title: '数据看板', icon: '📊', desc: '多维度运营分析：入住率趋势、收益对比、客源统计'},
+  {title: '安全接入', icon: '🌐', desc: '使用Cloudflare隧道加密通信，保障公网访问安全稳定'},
+
+  {title: '权限管家', icon: '🔐', desc: '基于角色的细粒度权限控制，支持操作日志审计'},
+  {title: '扩展框架', icon: '⚙️', desc: '模块化架构设计，方便后续功能插件扩展'},
+
+  {title: '容器化支持', icon: '🐳', desc: '支持Docker容器化部署，兼容1Panel管理平台'},
+  {title: 'UI体验', icon: '🎨', desc: 'Element-Plus组件库 + 响应式布局，统一设计规范'},
+
+  {title: '验证码防刷', icon: '🔒', desc: '登录注册支持验证码，防止机器人恶意注册'},
+  // {title: '自动备份', icon: '💽', desc: '支持定时自动备份数据库，保障数据安全'},
+
+  {title: '持续进化', icon: '🚀', desc: '定期功能更新，持续优化用户体验'}
 ])
 
 const show = ref(false)
@@ -74,12 +84,26 @@ onMounted(() => {
     show.value = true
   }, 100) // 延迟给动画加class，触发动画
 })
+
 function goTarget(url) {
   window.open(url, '__blank')
 }
 </script>
 
 <style scoped lang="scss">
+
+.el-card {
+  min-height: 150px;      /* 你根据需要调节 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
 .col-item {
   margin-bottom: 20px;
 }
